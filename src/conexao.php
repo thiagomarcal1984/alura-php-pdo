@@ -5,3 +5,5 @@ $caminhoBanco = __DIR__ . '/banco.sqlite';
 // Estrutura padrão: $pdo = new PDO(connection_stsring, usuario, senha, array_de_parms_extra);
 $pdo = new PDO('sqlite:' . $caminhoBanco);
 echo 'Conectei.';
+
+$pdo->exec('CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT, birth_date TEXT);');
