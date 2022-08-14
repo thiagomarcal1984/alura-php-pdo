@@ -14,3 +14,16 @@ O comando $pdo->exec() retorna o número de linhas afetadas pelo comando SQL.
 
 O comando $pdo->query() retorna um resultset após a execução do SQL. O objeto
 resultset possui vários métodos (inclusive o fetchAll) para buscar dados.
+
+Ao buscar dados com fetchAll, é possível escolher o estilo de busca 
+(fetch style). Por padrão, a busca retorna um array no fetch style FETCH_BOTH,
+ou seja, o array indexa tanto pelo nome da coluna quanto pelo número da coluna.
+
+FETCH_ASSOC é usado para retornar apenas o array associativo, sem o índice 
+numérico.
+
+FETCH_CLASS é usado para que o PDO instancie uma classe específica do seu 
+modelo. Mas para ele funcionar, é necessário que haja um construtor sem 
+parâmetros nessa classe. E ainda é possível que alguns parâmetros (como datas)
+não sejam inicializados corretamente. Nesse caso, pode ser melhor usar o 
+FETCH_ASSOC e depois usar um foreach para inicializar cada objeto.
