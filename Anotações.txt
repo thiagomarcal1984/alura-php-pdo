@@ -3,3 +3,9 @@ O comando a seguir mostra onde está o arquivo php.ini:
 
 Em alguns casos no Windows também pode ser necessário descomentar a seguinte linha do php.ini:
     ;extension_dir=ext
+
+Link ensinando como trabalhar com datas: 
+https://www.alura.com.br/artigos/manipulando-datas-e-horarios-com-php
+
+PDO = PHP Data Objects. É uma interface que permite ao PHP se comunicar com 
+diferentes databases.
