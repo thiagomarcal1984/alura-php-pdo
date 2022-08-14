@@ -9,3 +9,8 @@ https://www.alura.com.br/artigos/manipulando-datas-e-horarios-com-php
 
 PDO = PHP Data Objects. É uma interface que permite ao PHP se comunicar com 
 diferentes databases.
+
+O comando $pdo->exec() retorna o número de linhas afetadas pelo comando SQL.
+
+O comando $pdo->query() retorna um resultset após a execução do SQL. O objeto
+resultset possui vários métodos (inclusive o fetchAll) para buscar dados.
