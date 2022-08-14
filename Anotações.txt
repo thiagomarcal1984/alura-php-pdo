@@ -1,0 +1,5 @@
+O comando a seguir mostra onde está o arquivo php.ini: 
+    php --ini
+
+Em alguns casos no Windows também pode ser necessário descomentar a seguinte linha do php.ini:
+    ;extension_dir=ext
