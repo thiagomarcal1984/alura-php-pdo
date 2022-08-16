@@ -54,3 +54,10 @@ Os parâmetros no método bindValue:
 
 O método bindParam em Statement associa um parâmetro a uma variável declarada.
 Desta forma, o valor só é jogado na statement quando chamarem o método execute.
+
+O terceiro parâmetro do método bindValue/bindParam define o seu tipo de dados.
+Todos eles são identificados por PDO::PARAM_[tipo_do_parâmetro]. O tipo padrão 
+é PDO::PARAM_STR.
+
+Para números decimais, a recomendação é continuar enviando o parâmetro como 
+string. O database vai tratar da melhor forma os números decimais.
