@@ -33,3 +33,9 @@ O fetchAll pode exigir muita memória. Portanto, executar o comando fetch
 
 Há também o comando fetchColumn, que busca a coluna indicada na próxima linha
 do cursor do resultset.
+
+Sintaxe prepared Statement no PDO: 
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, "Primeiro valor.");
+    $statement->bindValue(2, "Segundo valor.");
+    $statement->execute();
