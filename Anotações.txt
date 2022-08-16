@@ -39,3 +39,18 @@ Sintaxe prepared Statement no PDO:
     $statement->bindValue(1, "Primeiro valor.");
     $statement->bindValue(2, "Segundo valor.");
     $statement->execute();
+
+O prepared statement também pode usar nomes de variáveis ao invés de 
+numeração por colunas: 
+    $sqlInsert = "INSERT INTO students (name, birth_date) VALUES (:name, :birth_date);";
+    $statement = $pdo->prepare($sqlInsert);
+    $statement->bindValue(':name', $student->name());
+    $statement->bindValue(':birth_date', $student->birthDate()->format('Y-m-d'));
+    $statement->execute();
+
+Os parâmetros no método bindValue:
+    ou devem usar somente nomes; 
+    ou somente pontos de interrogação.
+
+O método bindParam em Statement associa um parâmetro a uma variável declarada.
+Desta forma, o valor só é jogado na statement quando chamarem o método execute.
