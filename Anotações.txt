@@ -85,3 +85,7 @@ parâmetros que usam pontos de interrogação.
 Diferença entre DAO e Repositório:
     DAO tem apenas os 4 métodos do CRUD;
     Repositórios tem outros métodos além daqueles do CRUD.
+
+É interessante que o repositório parametrize a conexão que será usada para
+consultar o banco de dados. Isso torna o código mais fácil de testar. Isso é 
+chamado de injeção de dependência.
