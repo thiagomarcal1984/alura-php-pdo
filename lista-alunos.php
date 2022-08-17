@@ -2,10 +2,10 @@
 
 use Alura\Pdo\Domain\Model\Student;
 
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
+use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
 
-$databasePath = __DIR__ . '/banco.sqlite'; 
-$pdo = new PDO('sqlite:' . $databasePath);
+$pdo = ConnectionCreator::createConnection();
 
 $statement = $pdo->query("SELECT * FROM students;");
 /* Exemplo com fetchColumn (pega apenas a coluna da próxima linha).

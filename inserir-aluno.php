@@ -2,11 +2,10 @@
 
 use Alura\Pdo\Domain\Model\Student;
 
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
+use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
 
-// A duplicação do código de conexão.php não é boa prática.
-$databasePath = __DIR__ . '/banco.sqlite'; 
-$pdo = new PDO('sqlite:' . $databasePath);
+$pdo = ConnectionCreator::createConnection();
 
 $student = new Student(
     null, 
