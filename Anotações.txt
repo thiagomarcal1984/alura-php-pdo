@@ -61,3 +61,27 @@ Todos eles são identificados por PDO::PARAM_[tipo_do_parâmetro]. O tipo padrã
 
 Para números decimais, a recomendação é continuar enviando o parâmetro como 
 string. O database vai tratar da melhor forma os números decimais.
+
+É possível informar um array associativo para a função execute de um statement
+que use parâmetros nomeados.
+    Ex.: 
+        $insertQuery = 'INSERT INTO students(name, birth_date) VALUES (:name, :birth_date);';
+        $stmt = $this->connection->prepare($insertQuery);
+        $success = $stmt->execute([
+            ':name' => $student->name(),
+            ':birth_date' => $student->birthDate()->format('Y-m-d'),
+        ]);
+
+Ou informar um array numérico para a função execute de um statement que use
+parâmetros que usam pontos de interrogação.
+    Ex.:
+        $insertQuery = 'INSERT INTO students(name, birth_date) VALUES (?, ?);';
+        $stmt = $this->connection->prepare($insertQuery);
+        $success = $stmt->execute([
+            $student->name(),
+            $student->birthDate()->format('Y-m-d'),
+        ]);
+
+Diferença entre DAO e Repositório:
+    DAO tem apenas os 4 métodos do CRUD;
+    Repositórios tem outros métodos além daqueles do CRUD.
