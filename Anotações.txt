@@ -89,3 +89,6 @@ Diferença entre DAO e Repositório:
 É interessante que o repositório parametrize a conexão que será usada para
 consultar o banco de dados. Isso torna o código mais fácil de testar. Isso é 
 chamado de injeção de dependência.
+
+Os objetos PDO também tem métodos para controle de transação, quais sejam:
+$pdo->beginTransaction() e $pdo->commit().
