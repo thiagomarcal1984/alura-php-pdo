@@ -91,4 +91,4 @@ consultar o banco de dados. Isso torna o código mais fácil de testar. Isso é
 chamado de injeção de dependência.
 
 Os objetos PDO também tem métodos para controle de transação, quais sejam:
-$pdo->beginTransaction() e $pdo->commit().
+$pdo->beginTransaction(), $pdo->rollBack() e $pdo->commit().
