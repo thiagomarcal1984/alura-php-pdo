@@ -4,10 +4,11 @@ use Alura\Pdo\Domain\Model\Student;
 
 require_once 'vendor/autoload.php';
 use Alura\Pdo\Infrastructure\Persistence\ConnectionCreator;
+use Alura\Pdo\Infrastructure\Repository\PdoStudentRepository;
 
 $pdo = ConnectionCreator::createConnection();
 
-$statement = $pdo->query("SELECT * FROM students;");
+// $statement = $pdo->query("SELECT * FROM students;");
 /* Exemplo com fetchColumn (pega apenas a coluna da próxima linha).
 var_dump($statement->fetchColumn(1));
 exit();
@@ -24,13 +25,7 @@ while ($studentData = $statement->fetch(PDO::FETCH_ASSOC)) {
 }
 exit();
 */
-$studentDataList = $statement->fetchAll(PDO::FETCH_ASSOC);
-foreach($studentDataList as $studentData) {
-    $studentList[] = new Student(
-        $studentData['id'],
-        $studentData['name'],
-        new DateTimeImmutable($studentData['birth_date'])
-    );
-}
 
+$repository = new PdoStudentRepository($pdo);
+$studentList = $repository->allStudents();
 var_dump($studentList);

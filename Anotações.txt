@@ -107,3 +107,7 @@ acrescente a chave ATTR_ERRMODE e o valor ERRMOD_EXCEPTION:
 O atributo a seguir força o retorno de arrays associativos por padrão ao 
 recuperar linhas do banco de dados:
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+PHP aceita atribuição múltipla:
+    $a = $b = 2;
+    Resultado: $a e $b contém 2.
