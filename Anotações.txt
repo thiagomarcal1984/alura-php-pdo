@@ -103,3 +103,7 @@ O funcionamento do PDO pode ser alterado pelo método setAttribute.
 Exemplo: para forçar o lançamento de exceções oriundos do banco de dados,
 acrescente a chave ATTR_ERRMODE e o valor ERRMOD_EXCEPTION:
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+O atributo a seguir força o retorno de arrays associativos por padrão ao 
+recuperar linhas do banco de dados:
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
