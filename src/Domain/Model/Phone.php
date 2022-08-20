@@ -10,9 +10,9 @@ class Phone
     
     public function __construct(?int $id, string $area_code, string $number) 
     {
-        $this->$id = $id;
-        $this->$area_code = $area_code;
-        $this->$number = $number;
+        $this->id = $id;
+        $this->area_code = $area_code;
+        $this->number = $number;
     }
 
     public function formattedPhone(): string
