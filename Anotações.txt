@@ -92,3 +92,9 @@ chamado de injeção de dependência.
 
 Os objetos PDO também tem métodos para controle de transação, quais sejam:
 $pdo->beginTransaction(), $pdo->rollBack() e $pdo->commit().
+
+PDO::errorInfo: método que retorna um array com as informações associadas à 
+última operação realizada no database. O array tem 3 posições, quais sejam:
+    0: SQL State Error, identificado por 5 caracteres, conforme ANSI SQL);
+    1: Código de erro específico do Driver;
+    2: Mensagem de erro específica do Driver.
