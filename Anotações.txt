@@ -98,3 +98,8 @@ PDO::errorInfo: método que retorna um array com as informações associadas à
     0: SQL State Error, identificado por 5 caracteres, conforme ANSI SQL);
     1: Código de erro específico do Driver;
     2: Mensagem de erro específica do Driver.
+
+O funcionamento do PDO pode ser alterado pelo método setAttribute.
+Exemplo: para forçar o lançamento de exceções oriundos do banco de dados,
+acrescente a chave ATTR_ERRMODE e o valor ERRMOD_EXCEPTION:
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
