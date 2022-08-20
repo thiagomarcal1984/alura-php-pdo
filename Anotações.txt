@@ -111,3 +111,7 @@ recuperar linhas do banco de dados:
 PHP aceita atribuição múltipla:
     $a = $b = 2;
     Resultado: $a e $b contém 2.
+
+DDD Aggregate (Padrão do Martin Fowler):
+https://martinfowler.com/bliki/DDD_Aggregate.html
+O foco da busca é no aluno, não no telefone.
